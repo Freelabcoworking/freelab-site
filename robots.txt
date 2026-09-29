@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.freelabcoworking.com.br/sitemap.xml
