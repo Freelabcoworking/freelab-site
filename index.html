@@ -145,6 +145,37 @@ th{font-family:var(--label);font-size:11px;letter-spacing:.14em;text-transform:u
 td{font-variant-numeric:tabular-nums}
 td:first-child{font-weight:600;color:var(--noite)}
 
+/* podcast */
+#podcast{background:var(--noite);color:#fff;position:relative;overflow:hidden}
+#podcast .head h2{color:#fff}
+#podcast .head h2 span{color:var(--rosa)}
+#podcast .head p{color:rgba(255,255,255,.8)}
+#podcast .lab{color:var(--rosa)}
+.pod{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:48px;align-items:start}
+@media (max-width:900px){.pod{grid-template-columns:1fr;gap:32px}}
+.wave{display:flex;align-items:center;gap:6px;height:64px;margin-bottom:28px}
+.wave i{display:block;width:8px;border-radius:4px;background:#2A4A7A}
+.wave i.on{background:var(--rosa)}
+.inc{list-style:none;margin:0;padding:0;display:grid;border-top:1px solid rgba(255,255,255,.2)}
+.inc li{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.2);font-size:17px}
+.inc li::before{content:"";flex:none;width:18px;height:18px;margin-top:4px;border-radius:50%;background:var(--rosa) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%23061A3A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
+.pod .tip{margin-top:20px;font-size:15.5px;color:rgba(255,255,255,.78);padding-left:14px;border-left:2px solid var(--rosa)}
+.plans{display:grid;gap:12px}
+.plan{display:grid;grid-template-columns:1fr auto;gap:6px 20px;align-items:center;padding:22px 24px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14)}
+.plan.best{background:rgba(255,143,163,.1);border-color:var(--rosa)}
+.plan h3{color:#fff;font-size:19px}
+.plan .sub{grid-column:1;font-size:14.5px;color:rgba(255,255,255,.7)}
+.plan .v{grid-row:1 / span 2;grid-column:2;text-align:right;font-family:var(--display);font-weight:800;font-size:clamp(28px,3.4vw,38px);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.plan .v small{font-family:var(--body);font-size:15px;font-weight:600;letter-spacing:0;color:rgba(255,255,255,.7);margin-right:4px}
+.plan .tg{display:inline-block;font-family:var(--label);font-weight:700;font-size:10px;letter-spacing:.16em;text-transform:uppercase;background:var(--rosa);color:var(--noite);padding:4px 8px;border-radius:4px;margin-left:8px;vertical-align:middle}
+.live{margin-top:6px;padding:20px 24px;border-radius:8px;border:1px dashed rgba(255,255,255,.3);display:flex;gap:16px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.live p{font-size:15.5px;color:rgba(255,255,255,.85);max-width:44ch}
+.btn.rosa{background:var(--rosa);color:var(--noite)}
+/* map */
+.map{margin-top:16px;border-radius:8px;overflow:hidden;border:1px solid var(--linha);background:#fff;aspect-ratio:16/7;max-width:100%}
+@media (max-width:700px){.map{aspect-ratio:4/3}}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
 /* services */
 .svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 32px}
 @media (max-width:900px){.svc{grid-template-columns:1fr 1fr}}
@@ -258,7 +289,7 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 <header class="bar">
   <div class="wrap">
     <a class="brand" href="#topo" aria-label="FreeLab Coworking, início"><svg viewBox="0 0 100 140"><use href="#bulb"/></svg><b>FREE<i>LAB</i></b></a>
-    <nav aria-label="Principal"><a href="#espacos">Espaços e preços</a><a href="#servicos">Serviços</a><a href="#visite">Horários e endereço</a><a href="#duvidas">Dúvidas</a></nav>
+    <nav aria-label="Principal"><a href="#espacos">Espaços e preços</a><a href="#podcast">Podcast</a><a href="#servicos">Serviços</a><a href="#visite">Horários e endereço</a><a href="#duvidas">Dúvidas</a></nav>
     <a class="btn pri" data-book href="https://freelab-coworking.reservio.com/" target="_blank" rel="noopener">Reservar</a>
   </div>
 </header>
@@ -308,11 +339,39 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
   </div>
 </section>
 
+<section id="podcast">
+  <div class="wrap">
+    <div class="head"><span class="lab">Estúdio de podcast</span><h2>Grave seu podcast em um estúdio pronto para <span>a sua ideia.</span></h2><p>Reserve o estúdio para gravar seu episódio com conforto e qualidade profissional.</p></div>
+    <div class="pod">
+      <div>
+        <div class="wave" aria-hidden="true" id="wave"></div>
+        <ul class="inc">
+          <li>Apoio na preparação do roteiro</li>
+          <li>Sala climatizada e iluminação para a gravação</li>
+          <li>Até 4 microfones e 3 câmeras em 4K</li>
+          <li>Entrega do material bruto na hora, após a gravação</li>
+        </ul>
+        <p class="tip">Você pode chegar 30 minutos antes para se preparar e alinhar o roteiro antes da gravação.</p>
+      </div>
+      <div class="plans">
+        <div class="plan"><h3>1 episódio avulso</h3><span class="sub">Ideal para testar o formato</span><span class="v"><small>R$</small>750</span></div>
+        <div class="plan best"><h3>Pacote de 5 episódios</h3><span class="sub">Sai a R$ 598 por episódio</span><span class="v"><small>R$</small>2.990</span></div>
+        <div class="plan"><h3>Pacote de 10 episódios <span class="tg">Mais econômico</span></h3><span class="sub">Sai a R$ 490 por episódio</span><span class="v"><small>R$</small>4.900</span></div>
+        <div class="row" style="margin-top:8px">
+          <a class="btn rosa" data-book href="https://freelab-coworking.reservio.com/" target="_blank" rel="noopener"><svg><use href="#i-cal"/></svg>Reservar gravação</a>
+          <a class="btn sec" href="https://wa.me/5516992946646?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20est%C3%BAdio%20de%20podcast." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Tirar dúvidas</a>
+        </div>
+        <div class="live"><p><b style="color:#fff">Quer transmitir ao vivo?</b> Consulte a disponibilidade e os valores para transmissão simultânea no YouTube, Instagram e Facebook.</p><a class="btn sec" href="https://wa.me/5516992946646?text=Ol%C3%A1!%20Quero%20saber%20sobre%20transmiss%C3%A3o%20ao%20vivo%20do%20podcast." target="_blank" rel="noopener">Consultar</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="servicos">
   <div class="wrap">
     <div class="head"><span class="lab">Além da mesa</span><h2>Tudo que o seu negócio precisa para crescer</h2></div>
     <div class="svc">
-      <div><span class="ic"><svg><use href="#i-mic"/></svg></span><h3>Estúdio de podcast</h3><p>Grave podcast, entrevista ou vídeo com áudio profissional, sem montar nada.</p></div>
+      <div><span class="ic"><svg><use href="#i-mic"/></svg></span><h3>Estúdio de podcast</h3><p>Até 4 microfones e 3 câmeras em 4K, a partir de R$ 490 por episódio. <a href="#podcast" style="color:var(--freelab);font-weight:600">Ver pacotes</a></p></div>
       <div><span class="ic"><svg><use href="#i-mkt"/></svg></span><h3>Marketing 360</h3><p>Estratégia, conteúdo e tráfego para o seu negócio aparecer para as pessoas certas.</p></div>
       <div><span class="ic"><svg><use href="#i-mail"/></svg></span><h3>Virtual Desk</h3><p>Endereço comercial, recebimento de correspondência e atendimento telefônico, sem precisar estar aqui.</p></div>
       <div><span class="ic"><svg><use href="#i-box"/></svg></span><h3>Impressão 3D</h3><p>Protótipos, peças e brindes impressos no próprio coworking.</p></div>
@@ -352,6 +411,7 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
         <p style="font-size:15px;color:var(--mudo)">WhatsApp: (16) 99294-6646</p>
       </div>
     </div>
+    <div class="map"><iframe title="Mapa: FreeLab Coworking, Travessa Tamoio 156, Batatais SP" src="https://www.google.com/maps?q=Travessa+Tamoio,+156+-+Vila+Maria,+Batatais+-+SP,+14315-742&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
   </div>
 </section>
 
@@ -363,7 +423,7 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
       <details><summary>Qual a diferença entre FlyDesk, Private e AllSpace?</summary><p>FlyDesk é uma mesa no espaço compartilhado. Private é uma sala só para você ou sua equipe. AllSpace reserva o espaço compartilhado e a sala privativa juntos, para até 15 pessoas.</p></details>
       <details><summary>Posso reservar só uma hora?</summary><p>Sim. Todos os espaços têm pacote de 1 hora. Para uso frequente, os pacotes de semana e mês saem mais em conta.</p></details>
       <details><summary>Como funciona o Virtual Desk?</summary><p>Você usa o endereço do FreeLab como endereço comercial, e nós recebemos sua correspondência e atendemos suas ligações. Fale com a gente pelo WhatsApp para conhecer os valores.</p></details>
-      <details><summary>Posso gravar um podcast mesmo sem ser cliente do coworking?</summary><p>Pode. O estúdio pode ser reservado separadamente. Chame no WhatsApp para ver horários e valores.</p></details>
+      <details><summary>Posso gravar um podcast mesmo sem ser cliente do coworking?</summary><p>Pode. O estúdio é reservado separadamente: episódio avulso por R$ 750 ou pacotes de 5 (R$ 2.990) e 10 episódios (R$ 4.900). A reserva é feita pela agenda online.</p></details>
       <details><summary>Como faço para cancelar ou remarcar?</summary><p>Pelo próprio link de confirmação que chega no seu e-mail, ou falando com a gente pelo WhatsApp.</p></details>
     </div>
   </div>
@@ -448,6 +508,7 @@ function render(){
     </article>`}).join("");
 }
 render();
+(function(){const w=document.getElementById("wave");if(!w)return;[10,18,30,24,40,56,36,62,50,44,64,52,38,58,46,30,40,26,18,28,14,10].forEach((h,i)=>{const b=document.createElement("i");b.style.height=h+"px";if(i>5&&i<15)b.className="on";w.appendChild(b)})})();
 document.getElementById("tbl").innerHTML = `<thead><tr><th>Espaço</th>${DUR.map(d=>`<th>${d.label}</th>`).join("")}</tr></thead><tbody>${SPACES.map(s=>`<tr><td>${s.name}</td>${DUR.map(d=>`<td>${s.prices[d.k]==null?"Consulte":brl(s.prices[d.k])}</td>`).join("")}</tr>`).join("")}</tbody>`;
 
 // horários + aberto agora (horário de Brasília)
