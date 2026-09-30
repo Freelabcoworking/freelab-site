@@ -176,6 +176,51 @@ td:first-child{font-weight:600;color:var(--noite)}
 @media (max-width:700px){.map{aspect-ratio:4/3}}
 .map iframe{width:100%;height:100%;border:0;display:block}
 
+/* episodes */
+.eps{margin-top:56px;padding-top:32px;border-top:1px solid rgba(255,255,255,.18)}
+.eps-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.eps-head h3{color:#fff;font-size:22px}
+.eps-head a{color:var(--rosa);font-weight:600;text-decoration:none;font-size:15px}
+.ep-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.ep-grid{grid-template-columns:1fr}}
+.ep{display:grid;gap:10px}
+.ep .vid{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:8px;overflow:hidden;background:#000;border:0;padding:0;cursor:pointer;width:100%}
+.ep .vid img{width:100%;height:100%;object-fit:cover;display:block;opacity:.85;transition:opacity .2s}
+.ep .vid:hover img{opacity:1}
+.ep .vid .play{position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;background:var(--rosa);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.ep .vid .play::after{content:"";border-left:18px solid var(--noite);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
+.ep .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ep p{font-size:15px;color:rgba(255,255,255,.85);line-height:1.4}
+/* cursos */
+#cursos{background:#fff;border-top:1px solid var(--nuvem)}
+.cur{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+@media (max-width:900px){.cur{grid-template-columns:1fr;gap:32px}}
+.cur-price{border:1px solid var(--linha);border-radius:8px;overflow:hidden}
+.cur-price .top{padding:24px;display:grid;gap:6px;background:var(--papel);border-bottom:1px solid var(--linha)}
+.cur-price .v{font-family:var(--display);font-weight:800;font-size:44px;letter-spacing:-.04em;color:var(--noite);line-height:1}
+.cur-price .v small{font-family:var(--body);font-size:16px;font-weight:600;letter-spacing:0;color:var(--mudo)}
+.cur-price ul{list-style:none;margin:0;padding:20px 24px;display:grid;gap:10px;font-size:15.5px}
+.cur-price li{display:flex;gap:10px}
+.cur-price li::before{content:"";flex:none;width:16px;height:16px;margin-top:4px;border-radius:50%;background:var(--ciano) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%23061A3A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
+.cur-price .act{padding:0 24px 24px;display:grid;gap:10px}
+.rules-box{border-left:3px solid var(--amarelo);background:#FFF8E6;border-radius:0 8px 8px 0;padding:22px 24px;display:grid;gap:12px}
+.rules-box h3{font-size:17px}
+.rules-box ol{margin:0;padding-left:20px;display:grid;gap:8px;font-size:15.5px;color:#3A465E}
+.rules-box a{color:var(--freelab);font-weight:600}
+/* reviews */
+#avaliacoes{background:var(--papel)}
+.rv-sum{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:28px}
+.rv-sum .big{font-family:var(--display);font-weight:800;font-size:56px;letter-spacing:-.04em;color:var(--noite);line-height:1}
+.stars{color:#F5A623;letter-spacing:2px;font-size:20px}
+.rv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.rv-grid{grid-template-columns:1fr}}
+.rv{background:#fff;border:1px solid var(--linha);border-radius:8px;padding:22px;display:grid;gap:12px;align-content:start}
+.rv blockquote{margin:0;font-size:16px;line-height:1.55;color:var(--grafite)}
+.rv .who{display:flex;align-items:center;gap:10px;font-size:14.5px}
+.rv .av{width:36px;height:36px;border-radius:50%;background:var(--freelab);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+.rv .who b{display:block;color:var(--noite)}
+.rv .who span{color:var(--mudo);font-size:13px}
+
 /* services */
 .svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 32px}
 @media (max-width:900px){.svc{grid-template-columns:1fr 1fr}}
@@ -289,7 +334,7 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 <header class="bar">
   <div class="wrap">
     <a class="brand" href="#topo" aria-label="FreeLab Coworking, início"><svg viewBox="0 0 100 140"><use href="#bulb"/></svg><b>FREE<i>LAB</i></b></a>
-    <nav aria-label="Principal"><a href="#espacos">Espaços e preços</a><a href="#podcast">Podcast</a><a href="#servicos">Serviços</a><a href="#visite">Horários e endereço</a><a href="#duvidas">Dúvidas</a></nav>
+    <nav aria-label="Principal"><a href="#espacos">Espaços e preços</a><a href="#podcast">Podcast</a><a href="#cursos">Para cursos</a><a href="#avaliacoes">Avaliações</a><a href="#visite">Endereço</a></nav>
     <a class="btn pri" data-book href="https://freelab-coworking.reservio.com/" target="_blank" rel="noopener">Reservar</a>
   </div>
 </header>
@@ -364,6 +409,37 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
         <div class="live"><p><b style="color:#fff">Quer transmitir ao vivo?</b> Consulte a disponibilidade e os valores para transmissão simultânea no YouTube, Instagram e Facebook.</p><a class="btn sec" href="https://wa.me/5516992946646?text=Ol%C3%A1!%20Quero%20saber%20sobre%20transmiss%C3%A3o%20ao%20vivo%20do%20podcast." target="_blank" rel="noopener">Consultar</a></div>
       </div>
     </div>
+    <div class="eps">
+      <div class="eps-head"><div style="display:grid;gap:6px"><span class="lab">Gravado aqui</span><h3>Veja a qualidade do nosso estúdio</h3></div><a href="https://www.youtube.com/@NowRawpodcast" target="_blank" rel="noopener">Ver o canal NowRaw Podcast →</a></div>
+      <div class="ep-grid"><div class="ep"><button class="vid" type="button" data-yt="EV-LrwkM2wQ" aria-label="Assistir: NowRaw Podcast EP #025 · João Gabriel Souza | SALT | Moda & Business"><img src="https://i.ytimg.com/vi/EV-LrwkM2wQ/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button><p>NowRaw Podcast EP #025 · João Gabriel Souza | SALT | Moda & Business</p></div><div class="ep"><button class="vid" type="button" data-yt="-Kh_gL34Zm8" aria-label="Assistir: NowRaw Podcast EP #024 · Wallace e Jhony | WJ Móveis Decor | Do zero a uma empresa"><img src="https://i.ytimg.com/vi/-Kh_gL34Zm8/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button><p>NowRaw Podcast EP #024 · Wallace e Jhony | WJ Móveis Decor | Do zero a uma empresa</p></div><div class="ep"><button class="vid" type="button" data-yt="dRoYiUkmRDc" aria-label="Assistir: JorNow Live Streaming EP #001 · transmissão ao vivo"><img src="https://i.ytimg.com/vi/dRoYiUkmRDc/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button><p>JorNow Live Streaming EP #001 · transmissão ao vivo</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="cursos">
+  <div class="wrap">
+    <div class="head"><span class="lab">Para instituições de ensino e cursos</span><h2>Sala para aulas, apresentações e venda de cursos</h2><p>Espaço para escolas, instituições de ensino e empresas de cursos presenciais ou online que precisam receber alunos e interessados com estrutura profissional.</p></div>
+    <div class="cur">
+      <div class="cur-price">
+        <div class="top"><span class="lab">Locação por hora · sob consulta</span><span class="v">R$ 250 <small>/ hora</small></span><span style="font-size:14.5px;color:var(--mudo)">Disponibilidade confirmada após análise e assinatura prévia dos termos e condições.</span></div>
+        <ul><li>Sala climatizada e equipada</li><li>Wi-Fi para apresentações e aulas online</li><li>Área de café e descanso</li><li>Reserva com data e horário garantidos</li></ul>
+        <div class="act">
+          <a class="btn dark" href="https://wa.me/5516992946646?text=Ol%C3%A1%21%20Represento%20uma%20institui%C3%A7%C3%A3o%20de%20ensino%20/%20empresa%20de%20cursos%20e%20quero%20consultar%20a%20loca%C3%A7%C3%A3o%20de%20sala%20no%20FreeLab." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Consultar disponibilidade</a>
+          <a class="btn line" href="/termos-cursos">Ler os termos e condições</a>
+        </div>
+      </div>
+      <div class="rules-box">
+        <h3>Antes de reservar, leia com atenção</h3>
+        <ol>
+          <li>A reserva só é confirmada após a <b>assinatura prévia dos termos e condições</b>.</li>
+          <li>O FreeLab <b>apenas cede o espaço</b>. Não é parceiro, sócio nem responsável pelos cursos, produtos ou vendas da instituição.</li>
+          <li>É proibido usar o <b>nome, a marca, o logo ou o endereço do FreeLab</b> para divulgar cursos ou produtos, ou dar a entender qualquer vínculo com a FreeLab.</li>
+          <li>É proibida a <b>captação em massa</b> em nome do FreeLab: ligações, mensagens em massa, panfletagem ou abordagem na rua ou de porta em porta.</li>
+          <li>O descumprimento pode levar ao <b>cancelamento da reserva</b> e à recusa de novas locações.</li>
+        </ol>
+        <p style="font-size:15px"><a href="/termos-cursos">Ver os termos completos →</a></p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -375,7 +451,7 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
       <div><span class="ic"><svg><use href="#i-mkt"/></svg></span><h3>Marketing 360</h3><p>Estratégia, conteúdo e tráfego para o seu negócio aparecer para as pessoas certas.</p></div>
       <div><span class="ic"><svg><use href="#i-mail"/></svg></span><h3>Virtual Desk</h3><p>Endereço comercial, recebimento de correspondência e atendimento telefônico, sem precisar estar aqui.</p></div>
       <div><span class="ic"><svg><use href="#i-box"/></svg></span><h3>Impressão 3D</h3><p>Protótipos, peças e brindes impressos no próprio coworking.</p></div>
-      <div><span class="ic"><svg><use href="#i-ppl"/></svg></span><h3>Eventos e workshops</h3><p>Espaço para até 15 pessoas, ideal para cursos, treinamentos e encontros.</p></div>
+      <div><span class="ic"><svg><use href="#i-ppl"/></svg></span><h3>Eventos e workshops</h3><p>Espaço para até 15 pessoas, ideal para treinamentos e encontros. Instituições de ensino: <a href="#cursos" style="color:var(--freelab);font-weight:600">ver condições</a>.</p></div>
       <div><span class="ic"><svg><use href="#i-cup"/></svg></span><h3>Café e networking</h3><p>Uma pausa para o café e para conhecer quem também empreende em Batatais.</p></div>
     </div>
     <div class="row" style="margin-top:28px"><a class="btn dark" href="https://wa.me/5516992946646?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20do%20FreeLab." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Pedir orçamento</a></div>
@@ -390,6 +466,15 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
       <p>Somos um coworking em Batatais para freelancers, profissionais autônomos e pequenas equipes que querem estrutura profissional sem o custo de um escritório.</p>
     </div>
     <blockquote><span class="lab">Nossa missão</span>Oferecer soluções de espaços adequados de trabalho no modelo livre-serviço, a fim de amplificar negócios e criar um ecossistema forte de empreendedores.</blockquote>
+  </div>
+</section>
+
+<section id="avaliacoes">
+  <div class="wrap">
+    <div class="head"><span class="lab">Avaliações no Google</span><h2>Quem trabalha aqui recomenda</h2></div>
+    <div class="rv-sum"><span class="big">4,6</span><div style="display:grid;gap:2px"><span class="stars" aria-label="4,6 de 5 estrelas">★★★★★</span><span style="font-size:15px;color:var(--mudo)">Nota média no Google</span></div>
+      <div class="row" style="margin-left:auto"><a class="btn line" href="https://www.google.com/maps?cid=11436375346629176746" target="_blank" rel="noopener">Ver todas no Google</a><a class="btn pri" href="https://www.google.com/search?q=FreeLab+Coworking+Batatais#lrd=0x94b9fb50eb890647:0x9eb62ac905ddedaa,3" target="_blank" rel="noopener">★ Avaliar o FreeLab</a></div></div>
+    <div class="rv-grid"><article class="rv"><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><blockquote>Ótimo espaço coworking para trabalho em equipe, alinhamentos e reuniões empresariais. Agendamento simples e prático pelo próprio site com diversos planos acessíveis. Recomendo !!!</blockquote><div class="who"><span class="av">G</span><div><b>Guilherme A.</b><span>Avaliação no Google · há 3 anos</span></div></div></article><article class="rv"><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><blockquote>Excelente local. Ar condicionado, café, mesas e cadeiras confortáveis e wi-fi rápido. Excelente.</blockquote><div class="who"><span class="av">R</span><div><b>Rodolfo P.</b><span>Avaliação no Google · há 1 ano</span></div></div></article><article class="rv"><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><blockquote>Experiência sensacional. Muito bom saber que na cidade posso contar com um local assim, muito melhor que ir até uma lanchonete atender meus clientes. Muito sucesso!</blockquote><div class="who"><span class="av">F</span><div><b>Felipe N.</b><span>Avaliação no Google · há 2 anos</span></div></div></article><article class="rv"><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><blockquote>Excelente lugar para trabalhar! Ambiente muito aconchegante, música ambiente e um ótimo café. Recomendo demais!</blockquote><div class="who"><span class="av">G</span><div><b>Gabriel C.</b><span>Avaliação no Google · há 3 anos</span></div></div></article><article class="rv"><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><blockquote>Excelente espaço muito confortável atendo muito bem, dentro da cidade perto de tudo recomendo sem dúvidas.. parabéns</blockquote><div class="who"><span class="av">M</span><div><b>Marcelo A.</b><span>Avaliação no Google · há 1 ano</span></div></div></article><article class="rv"><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><blockquote>Adorei esse espaço! ambiente super aconchegante e gente boa demais. Com certeza recomendo e vou voltar!!</blockquote><div class="who"><span class="av">S</span><div><b>Santiago A.</b><span>Avaliação no Google · há 3 anos</span></div></div></article></div>
   </div>
 </section>
 
@@ -420,6 +505,7 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
     <div class="head"><span class="lab">Dúvidas frequentes</span><h2>Antes de reservar</h2></div>
     <div class="faq">
       <details><summary>Preciso reservar antes ou posso só aparecer?</summary><p>Recomendamos reservar pela agenda online para garantir o seu lugar, principalmente na sala privativa. Se chegar sem reserva, avisamos na hora se há mesa livre.</p></details>
+      <details><summary>Posso alugar a sala para vender ou apresentar cursos?</summary><p>Sim, para instituições de ensino e empresas de cursos, por R$ 250 a hora, sob consulta. A reserva só é confirmada após a assinatura prévia dos <a href="/termos-cursos" style="color:var(--freelab);font-weight:600">termos e condições</a>, que proíbem usar a marca do FreeLab e fazer captação em massa em nosso nome.</p></details>
       <details><summary>Qual a diferença entre FlyDesk, Private e AllSpace?</summary><p>FlyDesk é uma mesa no espaço compartilhado. Private é uma sala só para você ou sua equipe. AllSpace reserva o espaço compartilhado e a sala privativa juntos, para até 15 pessoas.</p></details>
       <details><summary>Posso reservar só uma hora?</summary><p>Sim. Todos os espaços têm pacote de 1 hora. Para uso frequente, os pacotes de semana e mês saem mais em conta.</p></details>
       <details><summary>Como funciona o Virtual Desk?</summary><p>Você usa o endereço do FreeLab como endereço comercial, e nós recebemos sua correspondência e atendemos suas ligações. Fale com a gente pelo WhatsApp para conhecer os valores.</p></details>
@@ -508,6 +594,7 @@ function render(){
     </article>`}).join("");
 }
 render();
+document.querySelectorAll(".ep .vid").forEach(b=>b.addEventListener("click",()=>{const id=b.dataset.yt;b.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0" title="Episódio do podcast" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';}));
 (function(){const w=document.getElementById("wave");if(!w)return;[10,18,30,24,40,56,36,62,50,44,64,52,38,58,46,30,40,26,18,28,14,10].forEach((h,i)=>{const b=document.createElement("i");b.style.height=h+"px";if(i>5&&i<15)b.className="on";w.appendChild(b)})})();
 document.getElementById("tbl").innerHTML = `<thead><tr><th>Espaço</th>${DUR.map(d=>`<th>${d.label}</th>`).join("")}</tr></thead><tbody>${SPACES.map(s=>`<tr><td>${s.name}</td>${DUR.map(d=>`<td>${s.prices[d.k]==null?"Consulte":brl(s.prices[d.k])}</td>`).join("")}</tr>`).join("")}</tbody>`;
 
